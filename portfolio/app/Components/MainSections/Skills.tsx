@@ -57,31 +57,31 @@ const SoftConceptSkillsImages = [
   },
 ];
 
-
 const Skills = () => {
 
-  const techRef = useRef(null); //References the scrolling container
-  const techX = useMotionValue(0); //Motion value controlling horizontal position
+  const techRef = useRef(null);
+  const softRef = useRef(null);
 
-const softRef = useRef(null);
-const softX = useMotionValue(0);
+  const techX = useMotionValue(0);
+  const softX = useMotionValue(0);
 
+  // Tech slider animation
+  useAnimationFrame((t: number
 
-// Tech slider animation
-useAnimationFrame((t) => { //t : Time in milliseconds since animation started
-  if (!techRef.current) return;
-  const cardWidth = 140 + 48;
-  const totalWidth = cardWidth * TechSkillsImages.length;
-  techX.set(((t / 20) % totalWidth) * -1); // speed 20 // % totalWidht:Resets position when it reaches the end (creates loop) //* -1:make it moves left 
-});
+  ) => {
+    if (!techRef.current) return;
+    const cardWidth = 140 + 48;
+    const totalWidth = cardWidth * TechSkillsImages.length;
+    techX.set(((t / 15) % totalWidth) * -1); // speed 20
+  });
 
-// Soft slider animation
-useAnimationFrame((t) => {
-  if (!softRef.current) return;
-  const cardWidth = 140 + 48;
-  const totalWidth = cardWidth * SoftConceptSkillsImages.length;
-  softX.set(((t / 20) % totalWidth) * -1); // slower speed 30
-});
+  // Soft slider animation
+  useAnimationFrame((t: number) => {
+    if (!softRef.current) return;
+    const cardWidth = 140 + 48;
+    const totalWidth = cardWidth * SoftConceptSkillsImages.length;
+    softX.set(((t / 15) % totalWidth) * -1); // slower speed 30
+  });
 
 
   return (
@@ -105,8 +105,7 @@ useAnimationFrame((t) => {
           <motion.div
             className="flex gap-8 sm:gap-10 md:gap-12"
             ref={techRef}
-            style={{ x:techX }} 
-            
+            style={{ x: techX }}
           >
             {[...TechSkillsImages, ...TechSkillsImages].map((skill, i) => (
               <div
@@ -141,8 +140,7 @@ useAnimationFrame((t) => {
           <motion.div
             className="flex gap-8 sm:gap-10 md:gap-12"
             ref={softRef}
-            style={{ x:softX }} 
-          
+            style={{ x: softX }}
           >
             {[...SoftConceptSkillsImages, ...SoftConceptSkillsImages].map(
               (skill, i) => (

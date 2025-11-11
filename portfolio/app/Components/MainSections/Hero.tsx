@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Button from "../Button";
 
 // HeroPage Component
-const HeroPage: React.FC = () => {
+const Hero: React.FC = () => {
   const [showEmoji, setShowEmoji] = useState(false);
   // const [animateKey, setAnimateKey] = useState(0);
 
@@ -66,7 +66,7 @@ const HeroPage: React.FC = () => {
     >
       {/* Left Content */}
       <motion.div
-        className="w-full lg:w-[45%] h-[500px] flex flex-col justify-center items-start p-6 lg:ml-16 rounded-2xl"
+        className="w-full lg:w-[45%] h-[400px] flex flex-col justify-center items-start p-6 lg:ml-16 rounded-2xl"
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
@@ -114,7 +114,7 @@ const HeroPage: React.FC = () => {
 
       {/* Right Image */}
       <motion.div
-        className="relative w-full lg:w-[45%] h-[500px] lg:h-[500px] ml-0 lg:ml-8 flex justify-center items-center mt-8 lg:mt-0"
+        className="relative w-full lg:w-[45%] h-[400px] lg:h-[500px] ml-0 lg:ml-8 flex justify-center items-center mt-8 lg:mt-0"
         initial={{ opacity: 1, scale: 0.8, y: -20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
@@ -131,4 +131,4 @@ const HeroPage: React.FC = () => {
   );
 };
 
-export default HeroPage;
+export default Hero;

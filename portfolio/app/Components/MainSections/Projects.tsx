@@ -116,22 +116,26 @@ export default function Projects() {
         {projects.map((project) => (
           <motion.li
             key={project.id}
-            className="flex-shrink-0 w-[240px] bg-gray-100 rounded-xl shadow-lg hover:shadow-2xl transition-transform duration-300 hover:-translate-y-2 cursor-pointer"
+            className="flex-shrink-0 w-[340px] h-[340px] bg-white/40 my-10 rounded-xl shadow-lg hover:shadow-2xl transition-transform duration-300 hover:-translate-y-2 cursor-pointer overflow-hidden"
           >
             <a
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-center text-center"
+              className="flex flex-col h-full text-center"
             >
-              <Image
-                src={project.image}
-                alt={project.name}
-                width={240}
-                height={160}
-                className="rounded-t-xl object-cover"
-              />
-              <div className="p-4">
+              {/* Image */}
+              <div className="relative w-full h-[60%]"> {/* take 60% of card height */}
+                <Image
+                  src={project.image}
+                  alt={project.name}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+
+              {/* Text */}
+              <div className="flex flex-col justify-center p-4 h-[40%] bg-white/80 backdrop-blur-sm">
                 <h2 className="text-lg font-semibold text-gray-800">{project.name}</h2>
                 <p className="text-sm text-gray-500 mt-2 line-clamp-2">
                   {project.description}
@@ -140,6 +144,8 @@ export default function Projects() {
             </a>
           </motion.li>
         ))}
+
+
       </motion.ul>
 
       <style>{`
@@ -149,7 +155,7 @@ export default function Projects() {
           background: #fff3;
         }
         .no-scrollbar::-webkit-scrollbar-thumb {
-          background: #3b82f6;
+          background:rgb(112, 3, 13);
           border-radius: 10px;
         }
       `}</style>
