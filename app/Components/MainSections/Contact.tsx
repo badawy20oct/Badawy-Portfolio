@@ -55,7 +55,7 @@ function Contact() {
 
         {/* Gmail */}
         <motion.a
-          href="mailto:your-email@gmail.com"
+          href="mailto:badawy20oct@gmail.com.com?subject=Hello&body=I want to contact with you"
           className="flex flex-col items-center bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-shadow duration-300"
           whileHover={{ scale: 1.05 }}
         >
@@ -65,9 +65,7 @@ function Contact() {
         </motion.a>
 
         {/* Phone */}
-        <motion.div
-          className="flex flex-col items-center bg-white rounded-xl shadow-lg p-6"
-        >
+        <motion.div className="flex flex-col items-center bg-white rounded-xl shadow-lg p-6">
           <FaPhone className="text-green-600 text-4xl mb-4" />
           <span className="text-lg font-medium text-gray-800">Phone</span>
           <span className="text-sm text-gray-500">+20 115 644 9473</span>

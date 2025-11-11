@@ -102,7 +102,10 @@ export default function Projects() {
   const maskImage = useScrollOverflowMask(scrollXProgress);
 
   return (
-    <section id="projects" className="relative w-full min-h-screen bg-white py-16">
+    <section
+      id="projects"
+      className="relative w-full min-h-screen bg-white py-16"
+    >
       <h1 className="text-4xl font-bold text-center text-primary mb-10">
         Projects
       </h1>
@@ -125,7 +128,9 @@ export default function Projects() {
               className="flex flex-col h-full text-center"
             >
               {/* Image */}
-              <div className="relative w-full h-[60%]"> {/* take 60% of card height */}
+              <div className="relative w-full h-[60%]">
+                {" "}
+                {/* take 60% of card height */}
                 <Image
                   src={project.image}
                   alt={project.name}
@@ -136,7 +141,9 @@ export default function Projects() {
 
               {/* Text */}
               <div className="flex flex-col justify-center p-4 h-[40%] bg-white/80 backdrop-blur-sm">
-                <h2 className="text-lg font-semibold text-gray-800">{project.name}</h2>
+                <h2 className="text-lg font-semibold text-gray-800">
+                  {project.name}
+                </h2>
                 <p className="text-sm text-gray-500 mt-2 line-clamp-2">
                   {project.description}
                 </p>
@@ -144,8 +151,6 @@ export default function Projects() {
             </a>
           </motion.li>
         ))}
-
-
       </motion.ul>
 
       <style>{`
