@@ -67,7 +67,7 @@ function Navbar() {
       </Link>
 
       {/* Desktop Links */}
-      <div className="ml-32 hidden md:flex items-center justify-center gap-10 text-black text-lg font-medium mt-4">
+      <div className="ml-32 hidden md:flex items-center justify-center gap-10 text-gray-500 text-lg font-medium mt-4">
         {links.map(({ label, href }) => (
           <Link
             key={href}

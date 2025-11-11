@@ -62,7 +62,7 @@ const HeroPage: React.FC = () => {
   return (
     <section
       id="Hero"
-      className="relative w-full h-[85vh] flex flex-col lg:flex-row justify-evenly items-center bg-white overflow-hidden"
+      className="relative w-full min-h-screen flex flex-col lg:flex-row justify-evenly items-center bg-white overflow-hidden"
     >
       {/* Left Content */}
       <motion.div
@@ -106,7 +106,7 @@ const HeroPage: React.FC = () => {
         >
           <Button
             title="Hire Me"
-            className="mt-4 !text-primary text-lg font-extrabold !bg-white !border-2 !border-primary hover:!text-white hover:!bg-secondary hover:!border-transparent transition"
+            className="text-end !text-primary text-lg font-extrabold !bg-white !border-2 !border-primary hover:!text-white hover:!bg-secondary hover:!border-transparent transition"
             onClick={() => slowScrollTo("contact", 2000, 100)}
           />
         </motion.div>
