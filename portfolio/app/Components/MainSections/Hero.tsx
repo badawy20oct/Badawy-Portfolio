@@ -106,7 +106,7 @@ const HeroPage: React.FC = () => {
         >
           <Button
             title="Hire Me"
-            className="text-end !text-primary text-lg font-extrabold !bg-white !border-2 !border-primary hover:!text-white hover:!bg-secondary hover:!border-transparent transition"
+            className="ml-100 !text-primary text-lg font-extrabold !bg-white !border-2 !border-primary hover:!text-white hover:!bg-secondary hover:!border-transparent transition"
             onClick={() => slowScrollTo("contact", 2000, 100)}
           />
         </motion.div>
