@@ -7,12 +7,12 @@ import Contact from "./Components/MainSections/Contact";
 
 export default function Home() {
   return (
-    <div>
+    <div className="mb-[30px]">
       <Nav />
       <Hero />
-      <About />
       <Skills />
-      <Projects /> 
+      <Projects />
+      <About />
       <Contact />
     </div>
   );

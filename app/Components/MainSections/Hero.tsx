@@ -62,11 +62,11 @@ const Hero: React.FC = () => {
   return (
     <section
       id="Hero"
-      className="relative w-full min-h-screen flex flex-col lg:flex-row justify-evenly items-center bg-white overflow-hidden"
+      className="relative w-full h-[700px] flex flex-col lg:flex-row justify-center items-center bg-white"
     >
       {/* Left Content */}
       <motion.div
-        className="w-full lg:w-[45%] h-[400px] flex flex-col justify-center items-start p-6 lg:ml-16 rounded-2xl"
+        className="w-full lg:w-[45%] h-[400px] flex flex-col justify-center items-center p-6 lg:ml-16 rounded-2xl"
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
@@ -91,11 +91,10 @@ const Hero: React.FC = () => {
         <h1 className="text-3xl sm:text-4xl font-semibold text-primary">
           Abdelrhman Badawy
         </h1>
-        <h1 className="text-3xl sm:text-4xl w-[200px] font-extrabold text-primary mt-2 leading-tight">
-          Front End <br />
-          <span className="pl-20 sm:pl-28 w-full">Developer</span>
+        <h1 className="text-3xl text-nowrap sm:text-4xl w-[200px] font-extrabold text-primary mt-2 leading-tight">
+          Front End Developer
         </h1>
-        <p className="text-gray-700 text-base sm:text-xl mt-4 leading-relaxed">
+        <p className="text-gray-700 text-base text-center sm:text-xl mt-4 leading-relaxed">
           Passionate about creating modern, responsive, and user-friendly web
           applications. Specialized in React, Next.js, and UI/UX best practices.
         </p>
@@ -103,10 +102,11 @@ const Hero: React.FC = () => {
         <motion.div
           whileHover={{ scale: 1.1 }}
           transition={{ type: "spring", stiffness: 300 }}
+          className="w-full flex justify-center"
         >
           <Button
             title="Hire Me"
-            className="ml-100 !text-primary text-lg font-extrabold !bg-white !border-2 !border-primary hover:!text-white hover:!bg-secondary hover:!border-transparent transition"
+            className="!text-primary text-lg font-extrabold !bg-white !border-2 !border-primary hover:!text-white hover:!bg-primary transition"
             onClick={() => slowScrollTo("contact", 2000, 100)}
           />
         </motion.div>
@@ -114,7 +114,7 @@ const Hero: React.FC = () => {
 
       {/* Right Image */}
       <motion.div
-        className="relative w-full lg:w-[45%] h-[400px] lg:h-[500px] ml-0 lg:ml-8 flex justify-center items-center mt-8 lg:mt-0"
+        className="relative w-full lg:w-[45%] h-[300px] lg:h-[300px] ml-0 lg:ml-8 flex justify-center items-center mt-8 lg:mt-0"
         initial={{ opacity: 1, scale: 0.8, y: -20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
