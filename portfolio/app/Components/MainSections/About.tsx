@@ -7,7 +7,7 @@ function Aboutpage() {
   return (
     <section
       id="about"
-      className="w-full h-full flex flex-col md:flex-row items-start md:items-center justify-start bg-white shadow-xl overflow-hidden"
+      className="relative z-10 w-full flex flex-col md:flex-row items-start md:items-center justify-start bg-white shadow-md overflow-hidden mb-12"
     >
       {/* Right Column - Content */}
       <div className="w-full md:w-3/5 h-full p-6 sm:p-8 md:p-16 flex flex-col justify-center">
