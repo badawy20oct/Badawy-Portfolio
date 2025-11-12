@@ -3,53 +3,97 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-function Aboutpage() {
+function About() {
   return (
     <section
       id="about"
-      className="relative z-10 w-full flex flex-col md:flex-row items-start md:items-center justify-start bg-white overflow-hidden mb-12"
+      className="relative w-full bg-white py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8"
     >
-      {/* Right Column - Content */}
-      <div className="w-full md:w-[70%] h-full p-6 sm:p-8 sm:pb-0 md:p-16 flex flex-col justify-center">
-        <h2
-          id="moreabout"
-          className="text-3xl sm:text-4xl md:text-5xl font-semibold text-primary mb-6"
-        >
-          More About Me
-        </h2>
-        <p className="text-base lg:text-2xl ml-4 md:text-6xl sm:text-lg md:text-xl text-gray-700 leading-relaxed">
-          I’m a Frontend Developer skilled in building responsive, SEO-friendly
-          web applications using React and Next.js. Proficient in creating
-          reusable UI components, implementing client- and server-side
-          rendering, and integrating APIs. Familiar with state management and
-          styling frameworks like Tailwind CSS. I’m motivated to learn, adapt to
-          new technologies, and contribute to high-quality, user-focused
-          products.
-        </p>
-      </div>
+      <div className="max-w-7xl mx-auto">
+        {/* Main Container */}
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+          {/* Left Column - Main Content */}
+          <motion.div
+            className="w-full lg:w-[65%] order-2 lg:order-1"
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-6 sm:mb-8">
+              More About Me
+            </h2>
+            <p className="text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed">
+              I'm a{" "}
+              <span className="font-semibold text-primary">
+                Junior Frontend Developer
+              </span>{" "}
+              with a strong foundation in building modern, responsive web
+              applications. I specialize in{" "}
+              <span className="font-semibold">React</span> and{" "}
+              <span className="font-semibold">Next.js</span>, with hands-on
+              experience in creating reusable UI components, implementing both
+              client-side and server-side rendering, and integrating RESTful
+              APIs.
+              <br />
+              <br />
+              I'm proficient in{" "}
+              <span className="font-semibold">Tailwind CSS</span> for styling,
+              familiar with state management solutions like Redux and Context
+              API, and understand SEO best practices for web performance
+              optimization. As a recent graduate eager to grow in the field, I'm
+              committed to writing clean, maintainable code and staying updated
+              with the latest frontend technologies. I'm passionate about
+              contributing to user-focused products and collaborating with teams
+              to deliver high-quality web experiences.
+            </p>
+          </motion.div>
 
-      {/* Left Column - Gradient Info Section */}
-      <div className="relative top-8 w-full md:w-[30%] h-full flex flex-col justify-center md:p-8 mt-4 sm:relative left-8 sm:p-8 sm:py-0 xs:relative left-10 xs:px-4 xs:py-0  text-gray-700">
-        <h3 className="text-lg md:text-xl font-semibold">Education</h3>
-        <span className="text-base md:text-lg font-medium text-gray-700">
-          Bachelor's degree in Computer Science <br />
-          2023 - Modern Academy
-        </span>
+          {/* Right Column - Info Cards */}
+          <motion.div
+            className="w-full lg:w-[35%] order-1 lg:order-2"
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <div className="space-y-3 sm:space-y-4">
+              {/* Education Card */}
+              <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg sm:rounded-xl p-3 sm:p-4 shadow-md border border-gray-100">
+                <h3 className="text-base sm:text-lg font-bold text-primary mb-1">
+                  🎓 Education
+                </h3>
+                <p className="text-xs sm:text-sm text-gray-700 font-medium">
+                  Bachelor's degree in Computer Science
+                </p>
+                <p className="text-xs text-gray-600 mt-0.5">
+                  2023 - Modern Academy
+                </p>
+              </div>
 
-        <h3 className="text-lg md:text-xl font-semibold mt-1">
-          Military Service
-        </h3>
-        <span className="text-base md:text-lg font-medium text-gray-700">
-          Completed 2025
-        </span>
+              {/* Military Service Card */}
+              <div className="bg-gradient-to-br from-green-50 to-teal-50 rounded-lg sm:rounded-xl p-3 sm:p-4 shadow-md border border-gray-100">
+                <h3 className="text-base sm:text-lg font-bold text-primary mb-1">
+                  🎖️ Military Service
+                </h3>
+                <p className="text-xs sm:text-sm text-gray-700 font-medium">
+                  Completed 2025
+                </p>
+              </div>
 
-        <h3 className="text-lg md:text-xl font-semibold mt-1">Language</h3>
-        <span className="text-base md:text-lg font-medium text-gray-700">
-          English - Excellent
-        </span>
+              {/* Language Card */}
+              <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg sm:rounded-xl p-3 sm:p-4 shadow-md border border-gray-100">
+                <h3 className="text-base sm:text-lg font-bold text-primary mb-1">
+                  🌍 Language
+                </h3>
+                <p className="text-xs sm:text-sm text-gray-700 font-medium">
+                  English - Excellent
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
 }
 
-export default Aboutpage;
+export default About;

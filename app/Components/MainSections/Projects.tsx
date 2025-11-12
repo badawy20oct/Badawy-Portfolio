@@ -7,11 +7,10 @@ import {
   useMotionValueEvent,
   animate,
   MotionValue,
-} from "motion/react";
+} from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
 
-// ===================== Project Data =====================
 const projects = [
   {
     id: 1,
@@ -57,7 +56,6 @@ const projects = [
   },
 ];
 
-// ===================== Mask Logic =====================
 const left = `0%`;
 const right = `100%`;
 const leftInset = `20%`;
@@ -95,7 +93,6 @@ function useScrollOverflowMask(scrollXProgress: MotionValue<number>) {
   return maskImage;
 }
 
-// ===================== Main Component =====================
 export default function Projects() {
   const ref = useRef(null);
   const { scrollXProgress } = useScroll({ container: ref });
@@ -104,9 +101,9 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="relative w-full max-h-screen bg-white py-16"
+      className="relative w-full bg-white py-12 sm:py-16 lg:py-20"
     >
-      <h1 className="text-4xl font-bold text-center text-primary mb-10">
+      <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-primary mb-8 sm:mb-12 px-4">
         Projects
       </h1>
 
@@ -114,22 +111,22 @@ export default function Projects() {
       <motion.ul
         ref={ref}
         style={{ maskImage, WebkitMaskImage: maskImage }}
-        className="flex overflow-x-scroll gap-6 px-10 pb-10 no-scrollbar"
+        className="flex overflow-x-scroll gap-4 sm:gap-6 lg:gap-8 px-4 sm:px-6 lg:px-10 pb-6 sm:pb-8 lg:pb-10 no-scrollbar"
       >
         {projects.map((project) => (
           <motion.li
             key={project.id}
-            className="flex-shrink-0 w-[340px] h-[340px] bg-white/40 my-10 rounded-xl shadow-lg hover:shadow-2xl transition-transform duration-300 hover:-translate-y-2 cursor-pointer overflow-hidden"
+            whileHover={{ scale: 1.02, y: -5 }}
+            className="flex-shrink-0 w-[280px] sm:w-[320px] lg:w-[360px] h-[360px] sm:h-[420px] lg:h-[480px] bg-white rounded-xl sm:rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer overflow-hidden"
           >
             <a
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col h-full text-center"
+              className="flex flex-col h-full"
             >
               {/* Image */}
-              <div className="relative w-full h-[60%]">
-                {/* take 60% of card height */}
+              <div className="relative w-full h-[65%] bg-gradient-to-br from-blue-100 to-purple-100">
                 {project.image ? (
                   <Image
                     src={project.image}
@@ -137,15 +134,19 @@ export default function Projects() {
                     fill
                     className="object-cover"
                   />
-                ) : null}
+                ) : (
+                  <div className="flex items-center justify-center h-full text-gray-400">
+                    No Image
+                  </div>
+                )}
               </div>
 
               {/* Text */}
-              <div className="flex flex-col justify-center p-4 h-[40%] bg-white/80 backdrop-blur-sm">
-                <h2 className="text-lg font-semibold text-gray-800">
+              <div className="flex flex-col justify-center p-4 sm:p-6 h-[35%] bg-white">
+                <h2 className="text-base sm:text-lg lg:text-xl font-semibold text-gray-800 line-clamp-1">
                   {project.name}
                 </h2>
-                <p className="text-sm text-gray-500 mt-2 line-clamp-2">
+                <p className="text-xs sm:text-sm text-gray-600 mt-2 line-clamp-3">
                   {project.description}
                 </p>
               </div>
@@ -153,6 +154,10 @@ export default function Projects() {
           </motion.li>
         ))}
       </motion.ul>
+      {/* Scroll Hint (Optional) */}
+      <p className="text-center text-sm text-gray-500 mt-4 lg:hidden">
+        ← Swipe to see more →
+      </p>
     </section>
   );
 }

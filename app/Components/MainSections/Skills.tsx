@@ -58,65 +58,93 @@ const SoftConceptSkillsImages = [
 ];
 
 const Skills = () => {
-  const techRef = useRef(null);
-  const softRef = useRef(null);
+  const techRef = useRef<HTMLDivElement>(null);
+  const softRef = useRef<HTMLDivElement>(null);
 
   const techX = useMotionValue(0);
   const softX = useMotionValue(0);
 
-  // Tech slider animation
+  // Tech slider animation - FIXED
   useAnimationFrame((t: number) => {
     if (!techRef.current) return;
-    const cardWidth = 140 + 48;
-    const totalWidth = cardWidth * TechSkillsImages.length;
-    techX.set(((t / 25) % totalWidth) * -1); // speed 20
+
+    // Use actual card width + gap (responsive)
+    const cardWidth = 120; // Average card width
+    const gap = 32; // Average gap between cards
+    const totalWidth = (cardWidth + gap) * TechSkillsImages.length;
+
+    // Smoother animation with modulo to prevent jumps
+    const newX = ((t / 30) % totalWidth) * -1;
+    techX.set(newX);
   });
 
-  // Soft slider animation
+  // Soft slider animation - FIXED
   useAnimationFrame((t: number) => {
     if (!softRef.current) return;
-    const cardWidth = 140 + 48;
-    const totalWidth = cardWidth * SoftConceptSkillsImages.length;
-    softX.set(((t / 25) % totalWidth) * -1); // slower speed 30
+
+    const cardWidth = 120;
+    const gap = 32;
+    const totalWidth = (cardWidth + gap) * SoftConceptSkillsImages.length;
+
+    // Slightly different speed for variety
+    const newX = ((t / 35) % totalWidth) * -1;
+    softX.set(newX);
   });
+
+  // Triple the array for seamless infinite scroll
+  const TechSkills = [
+    ...TechSkillsImages,
+    ...TechSkillsImages,
+    ...TechSkillsImages,
+    ...TechSkillsImages,
+    ...TechSkillsImages,
+  ];
+  const SoftSkills = [
+    ...SoftConceptSkillsImages,
+    ...SoftConceptSkillsImages,
+    ...SoftConceptSkillsImages,
+    ...SoftConceptSkillsImages,
+    ...SoftConceptSkillsImages,
+  ];
 
   return (
     <section
       id="skills"
-      className="overflow-hidden w-full bg-gradient-to-r from-white to-white pb-16 md:py-20  sm:mt-8"
+      className="overflow-hidden w-full bg-white py-12 sm:py-16 lg:py-20"
     >
       {/* Title */}
-      <h2 className="text-4xl text-center sm:text-3xl md:text-4xl font-bold mb-10 md:mb-14 text-primary">
+      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-8 sm:mb-12 lg:mb-16 text-primary">
         Skills
       </h2>
 
       {/* Tech Skills */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <h3 className="text-2xl md:text-3xl font-semibold text-primary mb-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 sm:mb-16 lg:mb-20">
+        <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-primary mb-4 sm:mb-6 text-center lg:text-left max-w-7xl mx-auto">
           Tech Skills
         </h3>
 
         {/* Slider */}
         <div className="relative w-full overflow-hidden">
           <motion.div
-            className="flex gap-8 sm:gap-10 md:gap-12"
+            className="flex gap-6 sm:gap-8 lg:gap-10"
             ref={techRef}
             style={{ x: techX }}
           >
-            {[...TechSkillsImages, ...TechSkillsImages].map((skill, i) => (
+            {TechSkills.map((skill, i) => (
               <div
-                key={i}
-                className="min-w-[100px] sm:min-w-[120px] md:min-w-[140px] h-28 flex flex-col items-center justify-center border border-gray-200 rounded-xl sm:rounded-2xl shadow-md bg-white"
+                key={`tech-${i}`}
+                className="flex-shrink-0 w-[90px] sm:w-[110px] lg:w-[120px] h-24 sm:h-28 lg:h-32 flex flex-col items-center justify-center border border-gray-200 rounded-xl shadow-md bg-white p-2"
               >
-                <div className="mb-2 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 relative">
+                <div className="mb-1 sm:mb-2 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 relative flex-shrink-0">
                   <Image
                     src={skill.icon}
                     alt={skill.name}
-                    layout="fill"
-                    objectFit="contain"
+                    fill
+                    className="object-contain"
+                    loading="eager"
                   />
                 </div>
-                <p className="text-xs sm:text-sm md:text-base font-medium text-gray-800">
+                <p className="text-xs sm:text-sm font-medium text-gray-800 text-center line-clamp-1">
                   {skill.name}
                 </p>
               </div>
@@ -126,38 +154,37 @@ const Skills = () => {
       </div>
 
       {/* Soft & Concept Skills */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 mt-16">
-        <h3 className="text-2xl md:text-3xl font-semibold text-primary mb-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-primary mb-4 sm:mb-6 text-center lg:text-left max-w-7xl mx-auto">
           Soft & Concept Skills
         </h3>
 
         {/* Slider */}
-        <div className="relative mx-auto w-full overflow-hidden">
+        <div className="relative w-full overflow-hidden">
           <motion.div
-            className="flex gap-8 sm:gap-10 md:gap-12"
+            className="flex gap-6 sm:gap-8 lg:gap-10"
             ref={softRef}
             style={{ x: softX }}
           >
-            {[...SoftConceptSkillsImages, ...SoftConceptSkillsImages].map(
-              (skill, i) => (
-                <div
-                  key={i}
-                  className="min-w-[100px] sm:min-w-[120px] md:min-w-[140px] h-28 flex flex-col items-center justify-center border border-gray-200 rounded-xl sm:rounded-2xl shadow-md bg-white"
-                >
-                  <div className="mb-2 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 relative">
-                    <Image
-                      src={skill.icon}
-                      alt={skill.name}
-                      layout="fill"
-                      objectFit="contain"
-                    />
-                  </div>
-                  <p className="text-xs sm:text-sm md:text-base font-medium text-gray-800">
-                    {skill.name}
-                  </p>
+            {SoftSkills.map((skill, i) => (
+              <div
+                key={`soft-${i}`}
+                className="flex-shrink-0 w-[90px] sm:w-[110px] lg:w-[120px] h-24 sm:h-28 lg:h-32 flex flex-col items-center justify-center border border-gray-200 rounded-xl shadow-md bg-white p-2"
+              >
+                <div className="mb-1 sm:mb-2 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 relative flex-shrink-0">
+                  <Image
+                    src={skill.icon}
+                    alt={skill.name}
+                    fill
+                    className="object-contain"
+                    loading="eager"
+                  />
                 </div>
-              )
-            )}
+                <p className="text-xs sm:text-sm font-medium text-gray-800 text-center line-clamp-1">
+                  {skill.name}
+                </p>
+              </div>
+            ))}
           </motion.div>
         </div>
       </div>
