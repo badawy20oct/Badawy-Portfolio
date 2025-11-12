@@ -2,13 +2,13 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { FaLinkedin, FaGithub, FaEnvelope, FaPhone } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 
 function Contact() {
   return (
     <section
       id="contact"
-      className="w-full h-90vh bg-gradient-to-b from-white to-gray-100 flex flex-col items-center justify-center px-6 md:px-20 py-16"
+      className="w-full min-h-[90vh] flex flex-col items-center justify-center px-6 md:px-20 py-16"
     >
       {/* Title */}
       <motion.h1
@@ -55,21 +55,27 @@ function Contact() {
 
         {/* Gmail */}
         <motion.a
-          href="mailto:badawy20oct@gmail.com.com?subject=Hello&body=I want to contact with you"
+          href="mailto:badawy20oct@gmail.com?subject=Hello&body=I want to contact with you"
           className="flex flex-col items-center bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-shadow duration-300"
           whileHover={{ scale: 1.05 }}
         >
           <FaEnvelope className="text-red-600 text-4xl mb-4" />
-          <span className="text-lg font-medium text-gray-800">Email</span>
-          <span className="text-sm text-gray-500">your-email@gmail.com</span>
+          <span className="text-lg font-medium text-gray-800">Gmail</span>
+          <span className="text-sm text-gray-500">badawy20oct@gmail.com</span>
         </motion.a>
 
-        {/* Phone */}
-        <motion.div className="flex flex-col items-center bg-white rounded-xl shadow-lg p-6">
-          <FaPhone className="text-green-600 text-4xl mb-4" />
-          <span className="text-lg font-medium text-gray-800">Phone</span>
+        {/* WhatsApp */}
+        <motion.a
+          href="https://wa.me/201156449473"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex flex-col items-center bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-shadow duration-300"
+          whileHover={{ scale: 1.05 }}
+        >
+          <FaWhatsapp className="text-green-600 text-4xl mb-4" />
+          <span className="text-lg font-medium text-gray-800">WhatsApp</span>
           <span className="text-sm text-gray-500">+20 115 644 9473</span>
-        </motion.div>
+        </motion.a>
       </motion.div>
     </section>
   );

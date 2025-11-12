@@ -7,10 +7,10 @@ function Aboutpage() {
   return (
     <section
       id="about"
-      className="relative z-10 w-full flex flex-col md:flex-row items-start md:items-center justify-start bg-white shadow-md overflow-hidden mb-12"
+      className="relative z-10 w-full flex flex-col md:flex-row items-start md:items-center justify-start bg-white overflow-hidden mb-12"
     >
       {/* Right Column - Content */}
-      <div className="w-full md:w-3/5 h-full p-6 sm:p-8 md:p-16 flex flex-col justify-center">
+      <div className="w-full md:w-[70%] h-full p-6 sm:p-8 sm:pb-0 md:p-16 flex flex-col justify-center">
         <h2
           id="moreabout"
           className="text-3xl sm:text-4xl md:text-5xl font-semibold text-primary mb-6"
@@ -29,8 +29,8 @@ function Aboutpage() {
       </div>
 
       {/* Left Column - Gradient Info Section */}
-      <div className="w-full md:w-2/5 h-full flex flex-col justify-center p-8 mt-4 sm:p-8 md:p-16 text-gray-700">
-        <h3 className="text-lg md:text-xl font-semibold mt-8">Education</h3>
+      <div className="relative top-8 w-full md:w-[30%] h-full flex flex-col justify-center md:p-8 mt-4 sm:relative left-8 sm:p-8 sm:py-0 xs:relative left-10 xs:px-4 xs:py-0  text-gray-700">
+        <h3 className="text-lg md:text-xl font-semibold">Education</h3>
         <span className="text-base md:text-lg font-medium text-gray-700">
           Bachelor's degree in Computer Science <br />
           2023 - Modern Academy
