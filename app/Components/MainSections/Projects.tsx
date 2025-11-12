@@ -104,7 +104,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="relative w-full min-h-screen bg-white py-16"
+      className="relative w-full max-h-screen bg-white py-16"
     >
       <h1 className="text-4xl font-bold text-center text-primary mb-10">
         Projects
@@ -129,14 +129,15 @@ export default function Projects() {
             >
               {/* Image */}
               <div className="relative w-full h-[60%]">
-                {" "}
                 {/* take 60% of card height */}
-                <Image
-                  src={project.image}
-                  alt={project.name}
-                  fill
-                  className="object-cover"
-                />
+                {project.image ? (
+                  <Image
+                    src={project.image}
+                    alt={project.name}
+                    fill
+                    className="object-cover"
+                  />
+                ) : null}
               </div>
 
               {/* Text */}
@@ -152,18 +153,6 @@ export default function Projects() {
           </motion.li>
         ))}
       </motion.ul>
-
-      <style>{`
-        /* Hide scrollbar but keep scroll functionality */
-        .no-scrollbar::-webkit-scrollbar {
-          height: 6px;
-          background: #fff3;
-        }
-        .no-scrollbar::-webkit-scrollbar-thumb {
-          background:rgb(112, 3, 13);
-          border-radius: 10px;
-        }
-      `}</style>
     </section>
   );
 }

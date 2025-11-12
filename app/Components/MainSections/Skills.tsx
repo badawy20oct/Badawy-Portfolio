@@ -58,7 +58,6 @@ const SoftConceptSkillsImages = [
 ];
 
 const Skills = () => {
-
   const techRef = useRef(null);
   const softRef = useRef(null);
 
@@ -66,13 +65,11 @@ const Skills = () => {
   const softX = useMotionValue(0);
 
   // Tech slider animation
-  useAnimationFrame((t: number
-
-  ) => {
+  useAnimationFrame((t: number) => {
     if (!techRef.current) return;
     const cardWidth = 140 + 48;
     const totalWidth = cardWidth * TechSkillsImages.length;
-    techX.set(((t / 15) % totalWidth) * -1); // speed 20
+    techX.set(((t / 25) % totalWidth) * -1); // speed 20
   });
 
   // Soft slider animation
@@ -80,9 +77,8 @@ const Skills = () => {
     if (!softRef.current) return;
     const cardWidth = 140 + 48;
     const totalWidth = cardWidth * SoftConceptSkillsImages.length;
-    softX.set(((t / 15) % totalWidth) * -1); // slower speed 30
+    softX.set(((t / 25) % totalWidth) * -1); // slower speed 30
   });
-
 
   return (
     <section

@@ -53,7 +53,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="flex items-end justify-evenly w-full px-8 py-5 shadow-sm sticky top-0 bg-white backdrop-blur-md z-50 border-b border-gray-200">
+    <nav className="flex items-center justify-evenly w-full px-8 py-5 shadow-sm sticky top-0 bg-white backdrop-blur-md z-50 border-b border-gray-200">
       {/* Logo */}
       <Link
         href="#"
@@ -67,7 +67,7 @@ function Navbar() {
       </Link>
 
       {/* Desktop Links */}
-      <div className="hidden md:flex items-end justify-between gap-10 text-gray-500 text-lg font-medium ">
+      <div className="hidden md:flex items-center justify-between gap-10 text-gray-500 text-lg font-medium ">
         {links.map(({ label, href }) => (
           <Link
             key={href}
@@ -84,11 +84,11 @@ function Navbar() {
         {/* Download CV Button */}
         <motion.div
           whileHover={{ scale: 1.1 }}
-          transition={{ type: "spring", stiffness: 600 }}
+          transition={{ type: "spring", stiffness: 100 }}
         >
           <Button
             title="Download CV"
-            className="!mt-0 ml-8 text-lg rounded-xl !text-primary text-lg font-extrabold !bg-white !border-2 !border-primary hover:!text-white hover:!bg-primary transition"
+            className="ml-8 px-5 py-2 bg-primary cursor-pointer text-white rounded-xl shadow-md hover:bg-white hover:text-gray-500 font-semibold border border-2-gray-500 transition"
             onClick={() => {
               const link = document.createElement("a");
               link.href = "/Files/Abdelrahman-Badawy-Frontend.pdf";

@@ -8,10 +8,7 @@ interface ButtonProps {
 
 function Button({ title, className, onClick }: ButtonProps) {
   return (
-    <button
-      className={`${className} mt-6 px-5 py-2 bg-primary cursor-pointer text-white rounded-lg shadow-md hover:bg-secondary transition`}
-      onClick={onClick}
-    >
+    <button className={`${className} `} onClick={onClick}>
       {title}
     </button>
   );

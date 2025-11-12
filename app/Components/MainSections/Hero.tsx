@@ -106,7 +106,7 @@ const Hero: React.FC = () => {
         >
           <Button
             title="Hire Me"
-            className="!text-primary text-lg font-extrabold !bg-white !border-2 !border-primary hover:!text-white hover:!bg-primary transition"
+            className="mt-6 px-5 py-2 bg-white text-primary  border-2 border-primary font-extrabold cursor-pointer  rounded-lg shadow-md hover:bg-primary hover:text-white transition"
             onClick={() => slowScrollTo("contact", 2000, 100)}
           />
         </motion.div>
@@ -114,18 +114,19 @@ const Hero: React.FC = () => {
 
       {/* Right Image */}
       <motion.div
-        className="relative w-full lg:w-[45%] h-[300px] lg:h-[300px] ml-0 lg:ml-8 flex justify-center items-center mt-8 lg:mt-0"
+        className="relative w-full lg:w-[45%] h-[300px] lg:h-[300px] xs:h-[1000px] ml-0 lg:ml-8 flex justify-center items-center mt-8 lg:mt-0"
         initial={{ opacity: 1, scale: 0.8, y: -20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
         whileHover={{ scale: 1.05, y: -5 }}
       >
-        <div className="absolute w-[250px] sm:w-[300px] lg:w-[335px] h-[350px] sm:h-[390px] lg:h-[390px] rounded-2xl bg-gradient-to-l from-white to-primary transform translate-x-3 translate-y-3"></div>
-        <img
-          src="/badawy.png"
-          alt="profile"
-          className="relative w-[240px] sm:w-[280px] lg:w-[310px] h-[350px] sm:h-[390px] lg:h-[400px] object-cover rounded-2xl shadow-lg"
-        />
+        <div className="absolute w-[250px] sm:w-[300px] lg:w-[335px] h-[350px] sm:h-[390px] lg:h-[390px] rounded-2xl bg-gradient-to-l from-white to-primary transform translate-x-3 translate-y-3">
+          <img
+            src="/badawy.png"
+            alt="profile"
+            className="relative w-[240px] sm:w-[280px] lg:w-[310px] h-[350px] sm:h-[390px] lg:h-[400px] object-cover rounded-2xl shadow-lg"
+          />
+        </div>
       </motion.div>
     </section>
   );
