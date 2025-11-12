@@ -3,8 +3,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --primary: #005A5B;
-  --secondary: #5B0100;
+  --primary: #005a5b;
+  --secondary: #5b0100;
 }
 
 @theme inline {
@@ -18,14 +18,11 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
     --foreground: #ededed;
-    --primary: #005A5B;
-    --secondary: #5B0100;
+    --primary: #005a5b;
+    --secondary: #5b0100;
   }
 }
-
-
 
 body {
   background: var(--background);

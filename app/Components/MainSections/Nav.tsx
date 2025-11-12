@@ -67,12 +67,12 @@ function Navbar() {
       </Link>
 
       {/* Desktop Links */}
-      <div className="ml-32 hidden md:flex items-center justify-center gap-10 text-black text-lg font-medium mt-4">
+      <div className="hidden md:flex items-center justify-between gap-10 text-gray-500 text-lg font-medium ">
         {links.map(({ label, href }) => (
           <Link
             key={href}
             href={href}
-            className="relative text-xl font-bold hover:text-secondary transition duration-300"
+            className="relative text-xl font-bold hover:text-primary transition duration-300"
             onClick={(e) => {
               e.preventDefault();
               slowScrollTo(href, 2000, 100);
@@ -81,26 +81,25 @@ function Navbar() {
             {label}
           </Link>
         ))}
+        {/* Download CV Button */}
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          transition={{ type: "spring", stiffness: 100 }}
+        >
+          <Button
+            title="Download CV"
+            className="ml-8 px-5 py-2 bg-primary cursor-pointer text-white rounded-xl shadow-md hover:bg-white hover:text-gray-500 font-semibold border border-2-gray-500 transition"
+            onClick={() => {
+              const link = document.createElement("a");
+              link.href = "/Files/Abdelrahman-Badawy-Frontend.pdf";
+              link.download = "AbdelrahmanBadawyCV.pdf";
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+            }}
+          />
+        </motion.div>
       </div>
-
-      {/* Download CV Button */}
-      <motion.div
-        whileHover={{ scale: 1.1 }}
-        transition={{ type: "spring", stiffness: 600 }}
-      >
-        <Button
-          title="Download CV"
-          className="text-lg mt-[18px] rounded-xl"
-          onClick={() => {
-            const link = document.createElement("a");
-            link.href = "/Files/Abdelrahman-Badawy-Frontend.pdf";
-            link.download = "AbdelrahmanBadawyCV.pdf";
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-          }}
-        />
-      </motion.div>
 
       {/* Mobile Menu Button */}
       <button
@@ -129,7 +128,7 @@ function Navbar() {
           ))}
           <Button
             title="Download CV"
-            className="text-md rounded-xl ml-8 "
+            className="text-lg rounded-xl !text-white text-lg font-extrabold !bg-primary !border-2 !border-primary hover:!text-white hover:!bg-white transition"
             onClick={() => {
               const link = document.createElement("a");
               link.href = "/Files/Abdelrahman-Badawy-Frontend.pdf";

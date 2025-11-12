@@ -2,28 +2,16 @@
 
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import Button from "../Button";
 
-// HeroPage Component
-const HeroPage: React.FC = () => {
+function Hero() {
   const [showEmoji, setShowEmoji] = useState(false);
-  // const [animateKey, setAnimateKey] = useState(0);
 
-  //Emoji rewaves
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowEmoji(true);
     }, 300);
     return () => clearTimeout(timer);
   }, []);
-
-  // //image reanimated
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setAnimateKey((prev) => prev + 1);
-  //   }, 2000);
-  //   return () => clearInterval(interval);
-  // }, []);
 
   const slowScrollTo = (
     elementId: string,
@@ -33,7 +21,6 @@ const HeroPage: React.FC = () => {
     const target = document.getElementById(elementId);
     if (!target) return;
 
-    // Add custom offset here (negative to scroll further up)
     const targetPosition =
       target.getBoundingClientRect().top + window.pageYOffset - offset;
 
@@ -62,11 +49,11 @@ const HeroPage: React.FC = () => {
   return (
     <section
       id="Hero"
-      className="relative w-full h-[85vh] flex flex-col lg:flex-row justify-evenly items-center bg-white overflow-hidden"
+      className="relative w-full min-h-screen py-12 sm:py-16 lg:py-8 flex flex-col lg:flex-row justify-center items-center bg-white"
     >
       {/* Left Content */}
       <motion.div
-        className="w-full lg:w-[45%] h-[500px] flex flex-col justify-center items-start p-6 lg:ml-16 rounded-2xl"
+        className="w-full lg:w-[45%] flex flex-col justify-center items-center md:items-start px-6 lg:px-8 lg:ml-16"
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
@@ -88,47 +75,50 @@ const HeroPage: React.FC = () => {
             </motion.span>
           )}
         </h3>
-        <h1 className="text-3xl sm:text-4xl font-semibold text-primary">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-primary">
           Abdelrhman Badawy
         </h1>
-        <h1 className="text-3xl sm:text-4xl w-[200px] font-extrabold text-primary mt-2 leading-tight">
-          Front End <br />
-          <span className="pl-20 sm:pl-28 w-full">Developer</span>
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary mt-2">
+          Front End Developer
         </h1>
-        <p className="text-gray-700 text-base sm:text-xl mt-4 leading-relaxed">
-          Passionate about creating modern, responsive, and user-friendly web
-          applications. Specialized in React, Next.js, and UI/UX best practices.
+        <p className="text-gray-700 text-sm sm:text-base md:text-lg lg:text-xl mt-4 leading-relaxed max-w-xl">
+          Passionate about building modern, responsive, and user-friendly web
+          applications. Specialized in{" "}
+          <span className="font-semibold">React</span>,{" "}
+          <span className="font-semibold">Next.js</span>, and UI/UX best
+          practices. Eager to learn, grow, and contribute to innovative
+          projects.
         </p>
         {/* Animated Button */}
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-          transition={{ type: "spring", stiffness: 300 }}
-        >
-          <Button
-            title="Hire Me"
-            className="mt-4 !text-primary text-lg font-extrabold !bg-white !border-2 !border-primary hover:!text-white hover:!bg-secondary hover:!border-transparent transition"
+        <motion.div className="w-full flex justify-center md:justify-start">
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: "spring", stiffness: 300 }}
+            className="mt-6 px-6 py-3 bg-white text-primary border-2 border-primary font-extrabold cursor-pointer rounded-lg shadow-md hover:bg-primary hover:text-white transition"
             onClick={() => slowScrollTo("contact", 2000, 100)}
-          />
+          >
+            Hire Me
+          </motion.button>
         </motion.div>
       </motion.div>
 
       {/* Right Image */}
       <motion.div
-        className="relative w-full lg:w-[45%] h-[500px] lg:h-[500px] ml-0 lg:ml-8 flex justify-center items-center mt-8 lg:mt-0"
+        className="relative w-full lg:w-[45%] h-[400px] sm:h-[440px] lg:h-[500px] flex justify-center items-center mt-12 lg:mt-0"
         initial={{ opacity: 1, scale: 0.8, y: -20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
         whileHover={{ scale: 1.05, y: -5 }}
       >
-        <div className="absolute w-[250px] sm:w-[300px] lg:w-[335px] h-[350px] sm:h-[390px] lg:h-[390px] rounded-2xl bg-gradient-to-l from-white to-primary transform translate-x-3 translate-y-3"></div>
+        <div className="absolute w-[260px] h-[360px] sm:w-[322px] sm:h-[400px]  lg:w-[380px] lg:h-[450px] rounded-2xl bg-gradient-to-l from-white to-primary translate-x-2 translate-y-2 sm:translate-x-3 sm:translate-y-3" />
         <img
-          src="/badawy.png"
+          src="badawy.png"
           alt="profile"
-          className="relative w-[240px] sm:w-[280px] lg:w-[310px] h-[350px] sm:h-[390px] lg:h-[400px] object-cover rounded-2xl shadow-lg"
+          className="relative z-10 w-[260px] h-[360px] sm:w-[300px] sm:h-[420px] lg:w-[350px] lg:h-[470px] object-cover rounded-2xl shadow-lg"
         />
       </motion.div>
     </section>
   );
-};
+}
 
-export default HeroPage;
+export default Hero;
