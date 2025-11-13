@@ -25,7 +25,7 @@ function About() {
             <p className="text-base sm:text-lg md:text-xl lg:text-xl text-gray-700 leading-relaxed">
               I'm a{" "}
               <span className="font-semibold text-primary">
-                Junior Frontend Developer
+                Frontend Developer
               </span>{" "}
               with a strong foundation in building modern, responsive web
               applications. I specialize in{" "}
@@ -37,9 +37,9 @@ function About() {
               <br />
               <br />
               I'm proficient in{" "}
-              <span className="font-semibold">Tailwind CSS</span> for styling,
+              Tailwind CSS for styling,
               familiar with state management solutions like Redux and Context
-              API, and understand SEO best practices for web performance
+              API, and understand<span className="font-semibold"> SEO </span>best practices for web performance
               optimization. As a recent graduate eager to grow in the field, I'm
               committed to writing clean, maintainable code and staying updated
               with the latest frontend technologies. I'm passionate about
