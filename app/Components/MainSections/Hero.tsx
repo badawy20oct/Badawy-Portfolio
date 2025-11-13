@@ -49,16 +49,16 @@ function Hero() {
   return (
     <section
       id="Hero"
-      className="relative w-full min-h-screen py-12 sm:py-16 lg:py-8 flex flex-col lg:flex-row justify-center items-center bg-white"
+      className="relative w-full min-h-screen py-12 sm:py-16 md:py-20 lg:py-8 flex flex-col lg:flex-row justify-center items-center bg-white"
     >
       {/* Left Content */}
       <motion.div
-        className="w-full lg:w-[45%] flex flex-col justify-center items-center md:items-start px-6 lg:px-8 lg:ml-16"
+        className="w-full lg:w-[45%] flex flex-col justify-center items-center md:items-start px-6 md:px-8 lg:px-8 lg:ml-16"
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
       >
-        <h3 className="text-gray-700 mb-2 text-xl sm:text-2xl flex items-center gap-2">
+        <h3 className="text-gray-700 mb-2 text-xl sm:text-2xl md:text-2xl flex items-center gap-2">
           Hi I'm
           {showEmoji && (
             <motion.span
@@ -69,19 +69,19 @@ function Hero() {
                 repeat: Infinity,
                 repeatDelay: 1.5,
               }}
-              className="text-2xl sm:text-3xl inline-block"
+              className="text-2xl sm:text-3xl md:text-3xl inline-block"
             >
               👋
             </motion.span>
           )}
         </h3>
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-primary">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-semibold text-primary">
           Abdelrhman Badawy
         </h1>
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary mt-2">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold text-primary mt-2">
           Front End Developer
         </h1>
-        <p className="text-gray-700 text-sm sm:text-base md:text-lg lg:text-xl mt-4 leading-relaxed max-w-xl">
+        <p className="text-gray-700 text-sm sm:text-base md:text-lg lg:text-xl mt-4 leading-relaxed max-w-xl text-center md:text-left">
           Passionate about building modern, responsive, and user-friendly web
           applications. Specialized in{" "}
           <span className="font-semibold">React</span>,{" "}
@@ -104,17 +104,17 @@ function Hero() {
 
       {/* Right Image */}
       <motion.div
-        className="relative w-full lg:w-[45%] h-[400px] sm:h-[440px] lg:h-[500px] flex justify-center items-center mt-12 lg:mt-0"
+        className="relative w-full lg:w-[45%] h-[400px] sm:h-[440px] md:h-[480px] lg:h-[500px] flex justify-center items-center mt-12 lg:mt-0"
         initial={{ opacity: 1, scale: 0.8, y: -20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
         whileHover={{ scale: 1.05, y: -5 }}
       >
-        <div className="absolute w-[260px] h-[360px] sm:w-[322px] sm:h-[400px]  lg:w-[380px] lg:h-[450px] rounded-2xl bg-gradient-to-l from-white to-primary translate-x-2 translate-y-2 sm:translate-x-3 sm:translate-y-3" />
+        <div className="absolute w-[260px] h-[360px] sm:w-[322px] sm:h-[400px] md:w-[350px] md:h-[430px] lg:w-[380px] lg:h-[450px] rounded-2xl bg-gradient-to-l from-white to-primary translate-x-2 translate-y-2 sm:translate-x-3 sm:translate-y-3" />
         <img
           src="badawy.png"
           alt="profile"
-          className="relative z-10 w-[260px] h-[360px] sm:w-[300px] sm:h-[420px] lg:w-[350px] lg:h-[470px] object-cover rounded-2xl shadow-lg"
+          className="relative z-10 w-[260px] h-[360px] sm:w-[300px] sm:h-[420px] md:w-[330px] md:h-[450px] lg:w-[360px] lg:h-[470px] object-cover rounded-2xl shadow-lg"
         />
       </motion.div>
     </section>

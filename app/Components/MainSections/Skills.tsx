@@ -110,32 +110,32 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="overflow-hidden w-full bg-white py-12 sm:py-16 lg:py-20"
+      className="overflow-hidden w-full bg-white py-12 sm:py-16 md:py-20 lg:py-20"
     >
       {/* Title */}
-      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-8 sm:mb-12 lg:mb-16 text-primary">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-center mb-8 sm:mb-12 md:mb-14 lg:mb-16 text-primary">
         Skills
       </h2>
 
       {/* Tech Skills */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 sm:mb-16 lg:mb-20">
-        <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-primary mb-4 sm:mb-6 text-center lg:text-left max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-8 mb-12 sm:mb-16 md:mb-18 lg:mb-20">
+        <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-semibold text-primary mb-4 sm:mb-6 md:mb-7 text-center lg:text-left max-w-7xl mx-auto">
           Tech Skills
         </h3>
 
         {/* Slider */}
         <div className="relative w-full overflow-hidden">
           <motion.div
-            className="flex gap-6 sm:gap-8 lg:gap-10"
+            className="flex gap-6 sm:gap-8 md:gap-9 lg:gap-10"
             ref={techRef}
             style={{ x: techX }}
           >
             {TechSkills.map((skill, i) => (
               <div
                 key={`tech-${i}`}
-                className="flex-shrink-0 w-[90px] sm:w-[110px] lg:w-[120px] h-24 sm:h-28 lg:h-32 flex flex-col items-center justify-center border border-gray-200 rounded-xl shadow-md bg-white p-2"
+                className="flex-shrink-0 w-[90px] sm:w-[110px] md:w-[115px] lg:w-[120px] h-24 sm:h-28 md:h-30 lg:h-32 flex flex-col items-center justify-center border border-gray-200 rounded-xl shadow-md bg-white p-2"
               >
-                <div className="mb-1 sm:mb-2 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 relative flex-shrink-0">
+                <div className="mb-1 sm:mb-2 w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 relative flex-shrink-0">
                   <Image
                     src={skill.icon}
                     alt={skill.name}
@@ -144,7 +144,7 @@ const Skills = () => {
                     loading="eager"
                   />
                 </div>
-                <p className="text-xs sm:text-sm font-medium text-gray-800 text-center line-clamp-1">
+                <p className="text-xs sm:text-sm md:text-sm font-medium text-gray-800 text-center line-clamp-1">
                   {skill.name}
                 </p>
               </div>
@@ -154,24 +154,24 @@ const Skills = () => {
       </div>
 
       {/* Soft & Concept Skills */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-primary mb-4 sm:mb-6 text-center lg:text-left max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-8">
+        <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-semibold text-primary mb-4 sm:mb-6 md:mb-7 text-center lg:text-left max-w-7xl mx-auto">
           Soft & Concept Skills
         </h3>
 
         {/* Slider */}
         <div className="relative w-full overflow-hidden">
           <motion.div
-            className="flex gap-6 sm:gap-8 lg:gap-10"
+            className="flex gap-6 sm:gap-8 md:gap-9 lg:gap-10"
             ref={softRef}
             style={{ x: softX }}
           >
             {SoftSkills.map((skill, i) => (
               <div
                 key={`soft-${i}`}
-                className="flex-shrink-0 w-[90px] sm:w-[110px] lg:w-[120px] h-24 sm:h-28 lg:h-32 flex flex-col items-center justify-center border border-gray-200 rounded-xl shadow-md bg-white p-2"
+                className="flex-shrink-0 w-[90px] sm:w-[110px] md:w-[115px] lg:w-[120px] h-24 sm:h-28 md:h-30 lg:h-32 flex flex-col items-center justify-center border border-gray-200 rounded-xl shadow-md bg-white p-2"
               >
-                <div className="mb-1 sm:mb-2 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 relative flex-shrink-0">
+                <div className="mb-1 sm:mb-2 w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 relative flex-shrink-0">
                   <Image
                     src={skill.icon}
                     alt={skill.name}
@@ -180,7 +180,7 @@ const Skills = () => {
                     loading="eager"
                   />
                 </div>
-                <p className="text-xs sm:text-sm font-medium text-gray-800 text-center line-clamp-1">
+                <p className="text-xs sm:text-sm md:text-sm font-medium text-gray-800 text-center line-clamp-1">
                   {skill.name}
                 </p>
               </div>
