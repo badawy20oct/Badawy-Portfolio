@@ -7,11 +7,11 @@ function About() {
   return (
     <section
       id="about"
-      className="relative w-full bg-white py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8"
+      className="relative w-full bg-white py-12 sm:py-16 md:py-20 lg:py-20 px-4 sm:px-6 md:px-8 lg:px-8"
     >
       <div className="max-w-7xl mx-auto">
         {/* Main Container */}
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+        <div className="flex flex-col lg:flex-row gap-8 md:gap-10 lg:gap-12">
           {/* Left Column - Main Content */}
           <motion.div
             className="w-full lg:w-[65%] order-2 lg:order-1"
@@ -19,10 +19,10 @@ function About() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-6 sm:mb-8">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-primary mb-6 sm:mb-8 md:mb-10">
               More About Me
             </h2>
-            <p className="text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl lg:text-xl text-gray-700 leading-relaxed">
               I'm a{" "}
               <span className="font-semibold text-primary">
                 Junior Frontend Developer
@@ -55,36 +55,36 @@ function About() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="space-y-3 sm:space-y-4">
+            <div className="space-y-3 sm:space-y-4 md:space-y-5">
               {/* Education Card */}
-              <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg sm:rounded-xl p-3 sm:p-4 shadow-md border border-gray-100">
-                <h3 className="text-base sm:text-lg font-bold text-primary mb-1">
+              <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-5 shadow-md border border-gray-100">
+                <h3 className="text-base sm:text-lg md:text-xl font-bold text-primary mb-1">
                   🎓 Education
                 </h3>
-                <p className="text-xs sm:text-sm text-gray-700 font-medium">
+                <p className="text-xs sm:text-sm md:text-base text-gray-700 font-medium">
                   Bachelor's degree in Computer Science
                 </p>
-                <p className="text-xs text-gray-600 mt-0.5">
+                <p className="text-xs sm:text-sm md:text-sm text-gray-600 mt-0.5">
                   2023 - Modern Academy
                 </p>
               </div>
 
               {/* Military Service Card */}
-              <div className="bg-gradient-to-br from-green-50 to-teal-50 rounded-lg sm:rounded-xl p-3 sm:p-4 shadow-md border border-gray-100">
-                <h3 className="text-base sm:text-lg font-bold text-primary mb-1">
+              <div className="bg-gradient-to-br from-green-50 to-teal-50 rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-5 shadow-md border border-gray-100">
+                <h3 className="text-base sm:text-lg md:text-xl font-bold text-primary mb-1">
                   🎖️ Military Service
                 </h3>
-                <p className="text-xs sm:text-sm text-gray-700 font-medium">
+                <p className="text-xs sm:text-sm md:text-base text-gray-700 font-medium">
                   Completed 2025
                 </p>
               </div>
 
               {/* Language Card */}
-              <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg sm:rounded-xl p-3 sm:p-4 shadow-md border border-gray-100">
-                <h3 className="text-base sm:text-lg font-bold text-primary mb-1">
+              <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-5 shadow-md border border-gray-100">
+                <h3 className="text-base sm:text-lg md:text-xl font-bold text-primary mb-1">
                   🌍 Language
                 </h3>
-                <p className="text-xs sm:text-sm text-gray-700 font-medium">
+                <p className="text-xs sm:text-sm md:text-base text-gray-700 font-medium">
                   English - Excellent
                 </p>
               </div>
